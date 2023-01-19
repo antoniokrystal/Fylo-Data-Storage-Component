@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    body{
+      height: 100vh;
+      margin: unset;
+      background-color: hsl(229, 57%, 11%);
+      background-image: url(images/bg-desktop.png);
+      background-repeat: no-repeat;
+      background-position-y:bottom;
+    }
+
+    .raleway-400{
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+    }
+
+    .raleway-700{
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: center; 
+      align-items: flex-end; 
+      flex-wrap: wrap;
+      padding: 15px;
+      gap: 25px;
+    }
+
+    .right-side {
+      background: hsl(228, 56%, 26%);
+      display: flex;
+      justify-content: flex-start; 
+      align-items: flex-start; 
+      flex-direction: column; 
+      flex-wrap: wrap;
+      height: 100%;
+      padding: 25px 75px 25px 25px;
+      gap: 5px;
+      border-radius: 10px 100px 10px 10px;
+    }
+
+    .right-side > div{
+      padding: 8px;
+    }
+
+    .icons-container {
+      display: flex;
+      justify-content: flex-start; 
+      align-items: flex-start; 
+      flex-direction: row; 
+      flex-wrap: wrap; 
+      height: 100%;
+      padding: 15px;
+      gap: 15px;
+      }
+
+    .icons-container > div{
+      background: hsl(229, 57%, 11%);
+      border-radius: 10px;
+      padding: 15px;
+    }
+
+    .icons-document{
+      height: 24px;
+      width: 28px;
+    }
+
+    .icons-folder{
+      height: 24px;
+    }
+
+    .icons-upload{
+      height: 24px;
+    }
+
+    .left-side{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column; 
+      height: 100%;
+      padding: 100px 20px 0px;
+      gap: 5px;
+      border-radius: 10px;
+      align-items: flex-end;
+    }
+
+    .left-side-content{
+      background: hsl(228, 56%, 26%);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; 
+      align-items: center;  
+      flex-direction: column; 
+      height: 100%;
+      padding: 10px 30px 0px;
+      gap: 5px;
+      border-radius: 10px;
+      margin-top: -15px;
+    }
+
+    .left-side-content > div{
+       padding: 8px;
+    }
+
+    .white-text{
+      color: #fff;
+    }
+
+
+    .sizes-container {
+      display: flex;
+      justify-content: space-around; 
+      align-items: flex-start; 
+      flex-wrap: wrap;
+      height: 100%;
+      padding: 15px;
+      gap: 150px;
+      }
+
+    .sizes-container > div{
+      padding: 8px;
+    }
+
+    .size{
+      margin: unset;
+    }
+
+    .meter { 
+      height: 10px;
+      position: relative;
+      background: hsl(229, 57%, 11%);
+      border-radius: 25px;
+      box-shadow: inset 0 -1px 1px hsl(229, 57%, 11%);
+      padding: 2px 0px 2px 2px;
+    }
+
+    .meter > span {
+      display: block;
+      height: 100%;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      background-image: linear-gradient(
+        center bottom,
+      );
+    }
+
+    .orange > span {
+      background-color: #ffa399;
+      background-image: linear-gradient(to right, #ffa399, 	#ff4d97);
+    }
+
+    .size-bubble{
+      color: hsl(229, 57%, 11%);
+      margin: unset;
+    }
+
+    .grey-text{
+      color: grey;
+      font-size: 14px;
+    }
+
+    .bubble {
+      position: relative;
+      font-family: sans-serif;
+      font-size: 18px;
+      line-height: 24px;
+      width: 100px;
+      background: #fff;
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      color: #000;
+      margin-right: 50px
+    }
+
+    .bubble-bottom-left:before {
+      content: "";
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      border-left: 20px solid transparent;
+      border-right: 20px solid #fff;
+      border-top: 20px solid #fff;
+      border-bottom: 20px solid transparent;
+      right: 0px;
+      bottom: -25px;
+    }
+
+  </style>
+</head>
+<body>
+<div>
+  <div class="flex-container">
+   
+    <div class="right-side">
+
+      <div class="item1">
+        <img src="images/logo.svg" alt="">
+      </div>
+      <div class="icons-container">
+        <div class="item1">
+          <img src="images/icon-document.svg" alt="" class="icons-document">
+        </div>
+        <div class="item2">
+          <img src="images/icon-folder.svg" alt="" class="icons-folder">
+        </div>
+        <div class="item3">
+          <img src="images/icon-upload.svg" alt=""
+          class="icons-upload">
+        </div>
+      </div>
+
+    </div>
+    <div class="left-side">
+      <div class="bubble bubble-bottom-left" contenteditable>
+        <p class="raleway-700 size-bubble">185 <span class="raleway-400 grey-text">GB Left</span></p>
+      </div>
+      <div class="left-side-content">
+      <div class="item1">
+        <p class="raleway-400 white-text"> You've used <span class="raleway-700">815 GB </span> your storage </p>
+
+        <div class="meter orange">
+          <span style="width: 80%"></span>
+        </div>
+      </div>
+      <div class="sizes-container">
+        <div class="item1">
+          <p class="size raleway-700 white-text">0 GB</p>
+        </div>
+        <div class="item2">
+          <p class="size raleway-700 white-text">1000 GB</p>
+        </div>
+        
+       
+      </div>
+      
+    </div>
+          
+    </div>
+    </div>
+    
+    
+
+ 
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">k-t</a>.
+  </div></div>
+</body>
+</html>
